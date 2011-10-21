@@ -1,0 +1,98 @@
+
+------------- Informs --------------
+
+Informs is a flexible adaptive tool for the creation of interactive online tutorials. It consists of easy to use software and a database of tutorials. 
+These tutorials have been created by users as a shared community resource, which can be re-used by other registered users to facilitate creative 
+collaboration.
+
+You can use Informs to:
+
+* Create interactive tutorials using the 'Guide at the Side' split-screen design, which gives students the opportunity to learn using live websites.
+* Find and re-purpose quality tutorials via the shared community database
+
+
+I - FEATURES AND REQUIREMENTS
+------------------------------------
+
+I - 1) Features
+
+	Enables the creation of interactive online tutorials allowing the inclusion of live websites:
+	* Superadmin user for the creation of admin accounts who in turn create and control editors
+	* Tutorials are developed using wysiwig editor and remain hidden until ready for publication 
+	* Objects such as images can be uploaded and included within the tutorial and reused
+	* Allows the creation of contents list and inline tutorial tips
+	* Single or multiple choice quizzes can be embedded
+	* Tutorials can be copied for reuse
+	* Comprehensive search facility for admins and editors
+	* Ability to download csv file of usage stats
+	* Audit log of all tutorial interactions
+
+
+I - 2) Requirements
+
+	To use Informs, you need the following:
+	* To run Informs your operating system must be able to run perl scripts (.pl files) 
+	  and have the mod_perl module installed.
+	* The following software must be installed:
+	
+	apache2.x web server
+	mysql 5.x
+	perl with mod_perl-2.0.2
+
+
+I - 3) Files
+
+	The distribution of Informs package includes the following files:
+	informs				            The logical place to hold any web content you might want to wrap around Informs
+	informs/README		                    This file
+	informs/LICENSE                             Licence information
+	informs/INSTALL				    Installation instructions
+	informs/NOTICE				    Licence information on the use of TinyMCE which is bundled with Informs
+	informs/tinymce                             The TinyMCE software which is used in the tutorial editing interface
+	informs/objects				    The directory to hold uploaded objects for use in tutorials
+	informs/informs.sql			    An sql script to build the Informs database tables
+	informs/informs_perl			    The directory containing all the perl scripts and functions
+	informs/informs_perl/inhale.ini		    File containing required path information and database connection details
+	informs/informs_perl/data/logs		    Contains a log file of failed log in attempts
+	informs/informs_perl/data/temp		    Temporary placeholder for uploaded objects
+	informs/informs_perl/data/templates/inhale  Holds the html files for presentation of the guide at the side and portfolio interfaces
+	informs/informs_perl/data/uploads	    Holds a copy of uploading objects for use if caching is enabled
+	
+	Perl custom modules:
+	
+	informs/informs_perl/InhaleCore.pm	    Handles the software environment including the restriction of form variables
+	informs/informs_perl/InhaleRead.pm	    Handles allthe database look ups 
+	informs/informs_perl/InhaleRender.pm	    For page content display and object handling also quiz rendering
+	informs/informs_perl/InhaleWrite.pm	    Handles all databse write functionality
+	
+	* all of the Perl modules listed above are very well commented	
+
+
+II - MYSQL DATABASE
+
+	Informs is served by a MySQL database consisting of the following 12 tables:
+	
+	accounts				    This table previously handled separate institutional accounts but now will hold only the superadmin account
+	audit				            Stores information on tutorial edits
+	objects					    Provides the file system reference to uploaded tutorial objects such as images
+	portfolios				    Individual portfolios can hold many tutorials
+	portfoliousers				    Look up table to link and editor to a portfolio
+	sessions				    Informs session information 
+	stats					    Information used to generate stats on number of tutorial access etc
+	statslookup				    Look up table for stats
+	steps					    Each tutorial consists of one or more steps (pages)
+	units					    A unit equates to a tutorial
+	unitscopied				    A record of tutorials that have been copied for use elsewhere
+	users					    Individual user accounts - for superadmin and editors
+	
+	
+III - INSTALL, SETUP AND USE INFORMS
+-----------------------------------
+
+Please refer to informs/INSTALL for instructions and sample configs
+
+
+IV - ABOUT THE AUTHOR, LICENSE AND SUPPORT
+-----------------------------------------
+
+Please refer to informs/LICENSE and note that no ongoing support is available for the Informs software

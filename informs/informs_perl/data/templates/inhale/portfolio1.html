@@ -1,0 +1,120 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+
+<title>Informs Project portfolios</title>
+{{cssLink}}
+<script type="text/javascript">
+<!--
+    function refreshThePage () {
+    }
+-->
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+function hider(theClass) {
+var allpagetags = new Array();
+var i=0;
+
+	var Ag = 'null';
+	//Populate the array with all the page tags
+        if (window.XMLHttpRequest) { // Mozilla, Safari,...
+		var allpagetags=document.getElementsByTagName("*");
+		var Ag = "firefox";
+        } else if (window.ActiveXObject) { // IE
+		var allpagetags=document.all;
+		var Ag = "IE";
+        }
+
+	//Cycle through the tags using a for loop
+
+	for (i=0; i<allpagetags.length; i++) {
+	//Pick out the tags with our class name
+		if (allpagetags[i].className==theClass) {
+			//Manipulate this in whatever way you want
+			if(allpagetags[i].style.display == 'none'){
+				// if row is hidden change display style to table-row
+
+				allpagetags[i].style.display= '';
+
+				// or the link DELETE THIS LINE IF USING BUTTON
+				document.getElementById('clicky').innerHTML = "Hide description";
+
+			} else{
+				// if row is not hidden change display style to none
+				allpagetags[i].style.display='none';
+
+				// or the link DELETE THIS LINE IF USING BUTTON
+				document.getElementById('clicky').innerHTML = "Show description";
+			}
+		}
+	}
+}
+/* ]]> */
+</script>
+
+</head>
+<body>
+<div class="container">
+
+{{adminStuff}}
+
+<div style="text-align:left;">
+<p>&nbsp;</p>
+<h1>{{accountTitle}}
+<p>{{portfolioName}}{{portfolioNameIcon}}</p>
+
+<p>{{portfolioLogo}}</p>
+
+<p>{{selectMessage}}</p>
+
+</div>
+
+{{subAccounts}}
+
+<!-- BEGIN REPEAT -->
+
+{{units}}
+
+<!-- END REPEAT -->
+
+<div style="text-align:center;">
+<table cellpadding="8" width="100%">
+<tr>
+<td style="text-align:center; background-color:#DEFAE3;">
+  <a href="colourscheme.pl?folio={{folioNumber}}&amp;render={{render}}" style="font-size:2em; color:#007F71;">
+  background and font options,<br />please click here
+  </a>
+</td>
+</tr>
+</table>
+</div>
+
+<div style="text-align:center;">
+<table width="100%" border="0" cellspacing="0" cellpadding="8">
+<tr>
+<td>
+  <div style="text-align:right;">
+  {{logInStuff}}
+  </div>
+</td>
+</tr>
+<tr><td><img src="/gfx/cthru.gif" height="1" width="488" alt="" /></td></tr>
+</table>
+
+</div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1139367-1";
+urchinTracker();
+</script>
+</body>
+</html>

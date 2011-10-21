@@ -1,0 +1,74 @@
+
+INFORMS INSTALLATION
+-------------------------------------------------------------------------------------------------
+
+* Pay special attention to the file /YOUR/PATH/TO/informs/informs_perl/inhale.ini as this contains the required path and
+  databse connectivity information *
+
+Prerequisites:
+
+Informs uses Apache 2.x with MySQL 5.x and Perl with mod_perl so it is reccommended that you
+use a Unix flavour of operating system. Refer to specific software documentation for help installing.
+
+Perl
+-------------------------------------------------------------------------------------------------
+
+Install Perl and ensure that the Informs Perl scripts in /informs_perl point to the correct installation
+
+
+Apache 2.x
+-------------------------------------------------------------------------------------------------
+
+Install apache and use the *sample* config below in httpd.conf
+
+###############INFORMS#################
+
+<VirtualHost YOUR IP ADDRESS:8080>
+ServerName www.YOURNAME.ac.uk
+DocumentRoot "/YOUR/PATH/TO/informs"
+
+PerlTaintCheck On
+PerlRequire /YOUR/PATH/TO/informs/informs_perl/startup.pl
+
+ScriptAlias /informs_perl/ "/YOUR/PATH/TO/informs/informs_perl/"
+
+<Location /YOUR/PATH/TO/informs/informs_perl>
+    SetHandler perl-script
+    PerlResponseHandler ModPerl::Registry
+    Options +ExecCGI
+    PerlOptions +ParseHeaders
+    Order allow,deny
+    Allow from all
+</Location>
+RewriteEngine on
+RewriteRule ^/$ /informs_perl/login2.pl$1 [R,L]
+</VirtualHost>
+
+##############END INFORMS###############
+
+
+MySQL 5.x
+-------------------------------------------------------------------------------------------------
+
+Install MySQL 
+
+Run the informs.sql script in /informs to build the Informs database and required tables. If you are receving content then you 
+will also receive additional .sql files to populate the tables.
+
+Create a new MySQL user with read/write privileges to the Informs database.
+
+* Ensure that you add the database and user information to /YOUR/PATH/TO/informs/informs_perl/inhale.ini
+
+The Informs software requires a Superadmin user which will be included in the database and permits maintenance of editor accounts
+for use in Informs.
+
+
+*** If Apache and MySQL are running you can now point to your web browser to ***
+
+http://www.YOURNAME/informs_perl/login2.pl and log in with username = superadmin and password = super123
+
+and be presented with a link to an empty superadmin portfolio!
+
+
+PLEASE NOTE : Unfortunately there is no ongoing support for Informs so good luck with the installation and using Informs for 
+              your interactive tutorial content creation.
