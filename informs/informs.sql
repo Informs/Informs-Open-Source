@@ -3,14 +3,12 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Oct 21, 2011 at 10:12 AM
+-- Generation Time: Nov 01, 2011 at 09:20 AM
 -- Server version: 5.0.67
 -- PHP Version: 5.2.4
 -- 
 -- Database: 'informs'
 -- 
-CREATE DATABASE informs DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE informs;
 
 -- --------------------------------------------------------
 
@@ -25,7 +23,7 @@ CREATE TABLE accounts (
   logo tinytext,
   css tinytext,
   PRIMARY KEY  (account)
-) ENGINE=MyISAM AUTO_INCREMENT=440 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table 'accounts'
@@ -49,12 +47,36 @@ CREATE TABLE audit (
   `type` char(1) default NULL,
   eventText text,
   PRIMARY KEY  (event)
-) ENGINE=MyISAM AUTO_INCREMENT=224916 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 -- 
--- Dumping data for table 'audit'
+-- Table structure for table 'faq'
 -- 
 
+CREATE TABLE faq (
+  id int(9) unsigned NOT NULL auto_increment,
+  category varchar(100) default NULL,
+  question varchar(255) default NULL,
+  answer mediumtext,
+  last_edit date default NULL,
+  PRIMARY KEY  (id)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table 'informstags'
+-- 
+
+CREATE TABLE informstags (
+  id int(11) NOT NULL auto_increment,
+  tags varchar(255) character set latin2 collate latin2_bin NOT NULL default '',
+  title varchar(255) character set latin2 collate latin2_bin default NULL,
+  unit int(11) NOT NULL default '0',
+  UNIQUE KEY id (id)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -75,12 +97,7 @@ CREATE TABLE objects (
   PRIMARY KEY  (object),
   KEY filename (filename(100)),
   KEY filetype (filetype)
-) ENGINE=MyISAM AUTO_INCREMENT=148160 DEFAULT CHARSET=latin1;
-
--- 
--- Dumping data for table 'objects'
--- 
-
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -97,7 +114,7 @@ CREATE TABLE portfolios (
   KEY title (title(255)),
   KEY account (account),
   KEY parent (parent)
-) ENGINE=MyISAM AUTO_INCREMENT=685 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table 'portfolios'
@@ -117,11 +134,6 @@ CREATE TABLE portfoliousers (
   PRIMARY KEY  (portfolio,`user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Dumping data for table 'portfoliousers'
--- 
-
-
 -- --------------------------------------------------------
 
 -- 
@@ -140,11 +152,6 @@ CREATE TABLE sessions (
   KEY account (account)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Dumping data for table 'sessions'
--- 
-
-
 -- --------------------------------------------------------
 
 -- 
@@ -162,11 +169,6 @@ CREATE TABLE stats (
   KEY unit (unit)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- 
--- Dumping data for table 'stats'
--- 
-
-
 -- --------------------------------------------------------
 
 -- 
@@ -179,12 +181,7 @@ CREATE TABLE statslookup (
   `time` int(10) unsigned default NULL,
   PRIMARY KEY  (sessionID),
   UNIQUE KEY sessionNumber (sessionNumber)
-) ENGINE=MyISAM AUTO_INCREMENT=3081003 DEFAULT CHARSET=latin1;
-
--- 
--- Dumping data for table 'statslookup'
--- 
-
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -201,11 +198,6 @@ CREATE TABLE steps (
   toc tinytext,
   PRIMARY KEY  (unit,step)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- 
--- Dumping data for table 'steps'
--- 
-
 
 -- --------------------------------------------------------
 
@@ -228,12 +220,7 @@ CREATE TABLE units (
   KEY portfolio (portfolio),
   KEY title (title(100)),
   KEY last_edited (last_edited)
-) ENGINE=MyISAM AUTO_INCREMENT=6353 DEFAULT CHARSET=latin1;
-
--- 
--- Dumping data for table 'units'
--- 
-
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -250,12 +237,7 @@ CREATE TABLE unitscopied (
   account int(11) unsigned default NULL,
   `timestamp` int(11) unsigned default NULL,
   PRIMARY KEY  (id)
-) ENGINE=MyISAM AUTO_INCREMENT=655980 DEFAULT CHARSET=latin1;
-
--- 
--- Dumping data for table 'unitscopied'
--- 
-
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -273,7 +255,7 @@ CREATE TABLE users (
   `name` tinytext NOT NULL,
   PRIMARY KEY  (`user`),
   KEY account (account)
-) ENGINE=MyISAM AUTO_INCREMENT=1117 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table 'users'
