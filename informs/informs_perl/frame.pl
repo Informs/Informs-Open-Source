@@ -1,5 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -WT
-
+#!/usr/bin/perl -wT
   
 #####################################################
 # RENDER THE CONTENT FOR AN INDIVIDUAL INHALE FRAME #
@@ -121,8 +120,7 @@ $template{dublinCore} .= qq(<meta name="DC.Identifier" scheme="URI" content="$us
 $template{dublinCore} .= qq(<meta name="DC.Format" scheme="IMT" content="text/html">\n);
 $template{dublinCore} .= qq(<meta name="DC.Type" lang="DCMIType" content="Tutorial">\n);
 $template{dublinCore} .= qq(<meta name="DC.Creator" content="$user->{accountTitle}">\n);
-$template{dublinCore} .= qq(<meta name="DC.Publisher" content="Intute Informs, based at the University of Manchester, UK">\n);
-$template{dublinCore} .= qq(<meta name="DC.Rights" lang="en" content="http://www.informs.intute.ac.uk">\n\n);
+$template{dublinCore} .= qq(<meta name="DC.Publisher" content="Informs, UK">\n);
 
 my $object   = getObject( object => $cgi->{'object'} );
 my $unit     = getUnit( unit => $unitnumber, folio => $folio );

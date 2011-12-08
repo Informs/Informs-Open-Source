@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -w
+#!/usr/bin/perl -wT
 
 ######
 #
@@ -79,8 +79,7 @@
 
     if($userIsAdmin) {
 
-	$template1{adminStuff} .= qq(<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />);
-	$template1{adminStuff} .= qq(<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>);
+	$template1{adminStuff} .= qq(<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>);
 
        #need this to finish breadcrumb 
        if($folioInfo{portfolioParent}){

@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -WT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -33,8 +33,6 @@ $template{dublinCore} .= qq(<meta name="DC.Identifier" scheme="URI" content="$us
 $template{dublinCore} .= qq(<meta name="DC.Format" scheme="IMT" content="text/html" />\n);
 $template{dublinCore} .= qq(<meta name="DC.Type" lang="DCMIType" content="Tutorial" />\n);
 $template{dublinCore} .= qq(<meta name="DC.Creator" content="$user->{accountTitle}" />\n);
-$template{dublinCore} .= qq(<meta name="DC.Publisher" content="Intute Informs, based at the University of Manchester, UK" />\n);
-$template{dublinCore} .= qq(<meta name="DC.Rights" lang="en" content="http://www.informs.intute.ac.uk" />\n\n);
 
 my $templog = untaint($user->{pathToData}."temp/".$digest.".txt", 4);
 
@@ -187,8 +185,6 @@ if($cgi->{'unit'}) {
         print "<html lang=\"en\"><head>\n";
 	 print qq(<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />\n<meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT" />\n<meta http-equiv="Pragma" content="no-cache" />\n<meta http-equiv="Cache-Control" content="no-cache" />\n);
 	 print "$template{dublinCore}<title>". $unit->{unitTitle} .' :: '.$user->{browser}.'</title>'. $js .'</head>'. $newline;
-
-
         print '<iframe width="23%" height="650px" id="inhale_left" name="inhale_left" src="'. $rscript.'?object='. $page->{leftFrame} .'&amp;frame=left&amp;'. $urlLink .'"/></iframe>'.$newline;
         print '<iframe width="75%" height="650px" id="inhale_main" name="inhale_main" src="frame.pl?object='. $page->{rightFrame} .'&amp;;frame=main&amp;'. $urlLink .'"/></iframe>'.$newline; 
         print noFrames($cgi->{'folio'}, $cgi->{'unit'}).'</html>'. $newline;
@@ -284,9 +280,8 @@ $template{dublinCore}
     <!--
 	launchGuide();
 	if( popUpOkay == 0 ) {
-	     document.write('<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />');
-	     document.write('<div class="container">');
-	     document.write('<p><img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" /></p>');     
+	     document.write('<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />');
+	     document.write('<div class="container">');	       
             document.write('<p>It looks like you are running a web browser pop up blocker.</p>');
             document.write('<p /><a href="#" onclick="launchGuide(); return false;">Please click here to start the unit...</a>');
 	     document.write('</div>');	

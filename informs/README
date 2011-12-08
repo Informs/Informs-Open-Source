@@ -50,6 +50,7 @@ I - 3) Files
 	informs/NOTICE				    Licence information on the use of TinyMCE which is bundled with Informs
 	informs/tinymce                             The TinyMCE software which is used in the tutorial editing interface
 	informs/objects				    The directory to hold uploaded objects for use in tutorials
+	informs/gfx				    Images used in the guide at the side
 	informs/informs.sql			    An sql script to build the Informs database tables
 	informs/informs_perl			    The directory containing all the perl scripts and functions
 	informs/informs_perl/inhale.ini		    File containing required path information and database connection details

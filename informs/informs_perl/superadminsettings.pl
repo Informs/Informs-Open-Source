@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -WT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -158,8 +158,8 @@ sub pageHeader
 
 <html lang="en">
 <head>
-<title>Intute Informs - Super Administrator Options</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<title>Informs - Super Administrator Options</title>
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />
 <style type="text/css">
 input,select,textarea { font-size:90%;}
 body { font-size:90% }
@@ -179,8 +179,7 @@ body { font-size:90% }
 </head>
 <body>
 <div class="container">
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
-<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a>
+<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a>
 
 
 HEADER

@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -wT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";

@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -T
+#!/usr/bin/perl -wT
 
 ##########
 # render the index page for the portfolio
@@ -56,13 +56,12 @@ print qq(<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-<title>Intute Informs copy unit</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<title>Informs copy unit</title>
+<link rel="stylesheet" href="/inhale.css" type="text/css" />
 </head>
 <body>
 <div class=container>
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
-<div id=breadcrumb>Intute Informs > <a href="login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > copy unit</div><br />);
+<div id=breadcrumb>Informs > <a href="login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > copy unit</div><br />);
 
     print qq(<div id="copy"><h2>Unit Copied</h2><b>$unit->{folioUnitTitle}</b> has been copied to <b>$folioInfo{portfolioName}</b>);
 
@@ -83,13 +82,12 @@ print qq(<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
-<title>Intute Informs copy unit</title>
+<title>Informs copy unit</title>
 <link rel="stylesheet" href="../inhale.css" type="text/css" />
 </head>
 <body>
 <div class=container>
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
-<div id=breadcrumb>Intute Informs > <a href="login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > copy unit</div><br />);
+<div id=breadcrumb>Informs > <a href="login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > copy unit</div><br />);
 print qq(<div align="left">);
 
     print qq(<form action="copyunit.pl"><input type="hidden" name="folio" value="$folio"><input type="hidden" name="from" value="$from"><input type="hidden" name="unit" value="$unitNo"><input type="hidden" name="action" value="yes">);

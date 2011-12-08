@@ -1,4 +1,4 @@
-#!/home/intute/perl/bin/perl -WT
+#!/usr/bin/perl -wT
 
 use strict;
 
@@ -47,9 +47,8 @@ header();
 
 print <<END1;
 
-<h1>Informs</h1>
 <div id="feedback" class="feedbackform">
-<h1>Existing users log in below:</h1>
+<h1>Informs users log in below:</h1>
 <form name="feedbackform" id="feedbackform" method="post" action="$user->{pathToCGI}login2.pl">
 
 <label>log in ID:</label><input type="text" name="idname" size="20" value="" />
@@ -62,20 +61,9 @@ print <<END1;
 </form>
 </div>
 <div class="feedbackspacer"></div>
-<div class="announce-box">
-        Latest: <a href="/faqs.html"><acronym title="Frequently Asked Questions">FAQs</acronym> about Informs after July 2011</a>
-</div>
 
 <div class="informsupdated">
-<h2>Informs tutorial content will no longer be available from our servers after December 2011</h2>
-<p> After that date there will be no further access to Informs tutorial content unless it has been transferred to your local installation.</p>
 
-<p>Informs will be made available as an <strong class="inf">open source piece of software</strong> for users to install locally, and we will support the 
-<strong>transfer of tutorial content</strong> to any local installation from October - December 2011.</p>
-
-<p>If you are interested in retaining your tutorial content, you must contact us via the Informs helpdesk  before <strong>30 September 2011</strong>.</p>
-
-<p>For more information, please read our <a href="/faqs.html">FAQs</a>.</p>
 </div>
 
 END1
@@ -83,12 +71,7 @@ END1
 footer();
 print <<END1;
 </div>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "UA-1139367-1";
-urchinTracker();
-</script>
+
 </body>
 </html>
 
@@ -115,12 +98,11 @@ print <<END2;
 <meta HTTP-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT">
 <meta HTTP-equiv="Pragma" content="no-cache">
 <meta HTTP-equiv="Cache-Control" content="no-cache">
-<meta http-equiv="refresh" content="1;url=http://www.informs.intute.ac.uk/">
+<meta http-equiv="refresh" content="1;url=/informs_perl/login2.pl">
 <title>Informs :: log out</title>
 <link rel="stylesheet" href="$user->{pathHtmlVir}inhale.css" type="text/css">
 </head><body>
 <div class="container">
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" />
 <div align="left">
 <p><br><p>
 Thank you for using Informs - you have now been logged out of your account and will be redirected to the Informs home page.<p>
@@ -246,9 +228,7 @@ print <<END3;
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT" />
 <meta name="description" content="Informs is a flexible adaptive tool for the creation of interactive online tutorials. It consists of easy to use software and a database of tutorials for the UK HE and FE community." />
-<meta name="copyright" content="Intute 2006 - 2008" />
 <meta name="keywords" content="internet; tutorials; free; education; research; teaching; UK; higher education; further education" />
-<meta name="author" content="Intute" />
 <meta http-equiv="content-language" content="en" />
 <meta http-equiv="pragma" content="no-cache" />
 <script language="JavaScript">
@@ -256,12 +236,11 @@ print <<END3;
 
 //-->
 </script>
-<title>Intute Informs</title>
-<link rel="stylesheet" href="$user->{pathHtmlVir}inhale.css" type="text/css" />
+<title>Informs</title>
+<link rel="stylesheet" href="$user->{pathHtmlVir}SAMPLE.css" type="text/css" />
 </head>
 <body>
 <div class="container">
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" />
 <p class="login">Logged in as:<strong> $user->{userRealName}</strong></p>
 <p class="opentext">Welcome to Informs.  Please select a portfolio from the list or <a href="login2.pl?action=logout&folio=$cgi->{folio}">log out</a>.</p>
 <table class="front">

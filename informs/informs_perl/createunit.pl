@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -wT
+#!/usr/bin/perl -wT
 
     use strict;
     use lib "./";
@@ -31,12 +31,11 @@ print qq(<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <title>Informs Project create unit</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />
 </head>
 <body>);
 print qq(<div class=container>);
-print qq(<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />);
-print qq(<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > create unit</div>);
+print qq(<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > create unit</div>);
 
     unless( $user->{userPortfolioList} =~ /:$folio:/ ) { die("ERROR - you do not have permission to create new units in portfolio $folio"); }
 

@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -w
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -35,14 +35,13 @@ if($cgi2->param('textarea')) {
     
 print '<html>';
 print '<head>';
-print '<title>Intute Informs - upload object</title>';
-print '<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />';
+print '<title>Informs - upload object</title>';
+print '<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />';
 print '</head>';
 print '<body>';
-print '<img src="http://www.informs.intute.ac.uk/gfx/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />';
 print '<p>The file has been uploaded as '.$objectID.'</p>';
 print '<p>If the file is a HTML page then use this link to embed in your unit</p>';
-print '<p>http://www.informs.intute.ac.uk/objects/'.$filename.'</p>';
+print '<p>/objects/'.$filename.'</p>';
 print '</body>';
 print '</html>';
 }
@@ -88,14 +87,13 @@ elsif($cgi2->param('thefile')) {
 
 print '<html>';
 print '<head>';
-print '<title>Intute Informs - upload object</title>';
-print '<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />';
+print '<title>Informs - upload object</title>';
+print '<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />';
 print '</head>';
 print '<body>';
-print '<img src="http://www.informs.intute.ac.uk/gfx/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />';
 print '<p>The file has been uploaded as object '.$objectID.'</p>';
 print '<p>If the file is a HTML page then use this link to embed in your unit</p>';
-print '<p>http://www.informs.intute.ac.uk/objects/'.$filename2.'</p>';
+print '<p>/objects/'.$filename2.'</p>';
 print '</body>';
 print '</html>';
 }
@@ -111,8 +109,8 @@ else {
 <meta http-equiv="Expires" content="Fri, Jun 12 1981 08:20:00 GMT" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
-<title>Intute Informs upload object</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<title>Informs upload object</title>
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />
 <style type="text/css">
 .box {padding-top:10px; padding-left:10px; }
 table.thisobject{
@@ -129,7 +127,6 @@ text-align:left;
 </head>
 <body>
 <div class="container">
-<img src="http://www.informs.intute.ac.uk/gfx/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
 <p><h2>Insert object</h2></p>
 <div id="create"><div class="box">
 <table class="thisobject">

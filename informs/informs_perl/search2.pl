@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -wT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -58,13 +58,12 @@ my($text, $folio) = @_;
 <html lang="en">
 <head>
 <title>Informs Search units</title>
-<link rel="stylesheet" href="../inhale.css" type="text/css">
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css">
 </head>
 <body>
 <div class="container">
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
 
-<div id="breadcrumb">Intute Informs> <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a> > <a href="portfolio.pl?folio=$userFolio">$folioInfo{portfolioName}</a> > browse</div>                 
+<div id="breadcrumb">Informs> <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a> > <a href="portfolio.pl?folio=$userFolio">$folioInfo{portfolioName}</a> > browse</div>                 
 <p>Display units with titles starting with ...</p>
 
 <a href="search2.pl?folio=$userFolio&txtbox=a">A</a> |

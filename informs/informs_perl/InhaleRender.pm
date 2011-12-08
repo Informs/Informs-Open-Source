@@ -304,7 +304,7 @@ sub init_colours {
             $ret = qq(<link rel="stylesheet" href="$curl" type="text/css" />);
 	}
         elsif(length($str) != 4 && $type ne 'standalone') {
-            $ret = '<link rel="stylesheet" href="'.$htmlVirPath.'inhale.css" type="text/css" />';
+            $ret = '<link rel="stylesheet" href="'.$htmlVirPath.'SAMPLE.css" type="text/css" />';
         }
         else {
     
@@ -645,7 +645,7 @@ a:hover { background-color: $linkColour; color:$backColour; text-decoration: und
                     $ret .= qq(<body class="popup" onload="self.focus()"><div class="content">\n);
                 }
                 else { 
-                    $ret .= qq(<html><head>\n<title>Intute Informs</title>\n);
+                    $ret .= qq(<html><head>\n<title>Informs</title>\n);
                     $ret .= $encoding;
                     $ret .= generateStylesheet($render,'','',$customCSS).qq(</head>\n);
                     $ret .= qq(<body class="body_main" onload="self.focus()"><div class="content">\n);
@@ -954,15 +954,15 @@ function toggle'.$tipNumber.'() {
 	var text = document.getElementById("displayText'.$tipNumber.'");
 	if(ele.style.display == "block") {
     		ele.style.display = "none";
-		text.innerHTML = "<img src=\"http://www.informs.intute.ac.uk/gfx/tip.gif\" border=\"0\" /> '.$tipHeading.'";
+		text.innerHTML = "<img src=\"/gfx/tip.gif\" border=\"0\" /> '.$tipHeading.'";
   	}
 	else {
 		ele.style.display = "block";
-		text.innerHTML = "<img src=\"http://www.informs.intute.ac.uk/gfx/tip.gif\" border=\"0\" /> Hide Tip";
+		text.innerHTML = "<img src=\"/gfx/tip.gif\" border=\"0\" /> Hide Tip";
 	}
 } 
 </script>
-<p><a title="'.niceQuotes(tidy($dat)).'" id="displayText'.$tipNumber.'" href="javascript:toggle'.$tipNumber.'();"><img src="http://www.informs.intute.ac.uk/gfx/tip.gif" border="0" /> '.$tipHeading.'</a>
+<p><a title="'.niceQuotes(tidy($dat)).'" id="displayText'.$tipNumber.'" href="javascript:toggle'.$tipNumber.'();"><img src="/gfx/tip.gif" border="0" /> '.$tipHeading.'</a>
 <div id="toggleText'.$tipNumber.'" style="display:none"><p class="tip"><b class="object">'.niceQuotes(tidy($dat)).'</b></p></div></p>'.$aft;  
 		}
          }

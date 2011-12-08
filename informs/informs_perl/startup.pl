@@ -1,6 +1,8 @@
+#!/usr/bin/perl -wT
+
 use strict; 
 
-use lib qw( /home/zzintadm/html/informs/informs_perl  /home/zzintadm/html/informs/informs_perl/lib ); 
+use lib qw( /YOUR/PATH/TO/informs/informs_perl  /YOUR/PATH/TO/informs/informs_perl/lib ); 
      
 use Digest::MD5 ();
 use HTTP::BrowserDetect ();

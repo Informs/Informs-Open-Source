@@ -1,9 +1,8 @@
-#!/home/zzintadm/perl/bin/perl -wT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
 use locale;
-
 
 use Digest::MD5 qw(md5_hex);
 
@@ -77,12 +76,11 @@ sub header {
 <meta HTTP-equiv="Pragma" content="no-cache">
 <meta HTTP-equiv="Cache-Control" content="no-cache">
 <title>Informs Project :: Delete Unit</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css">
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css">
 </head>
 <body>
 <div class=container>
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
-<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > delete unit</div>
+<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > delete unit</div>
 
 HEAD
 }

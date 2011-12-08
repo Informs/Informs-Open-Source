@@ -13,13 +13,14 @@ use a Unix flavour of operating system. Refer to specific software documentation
 Perl
 -------------------------------------------------------------------------------------------------
 
-Install Perl and ensure that the Informs Perl scripts in /informs_perl point to the correct installation
+Install Perl with mysql support and ensure that the Informs Perl scripts in /informs_perl point to the correct installation and that they are 
+executable
 
 
 Apache 2.x
 -------------------------------------------------------------------------------------------------
 
-Install apache and use the *sample* config below in httpd.conf
+Install apache with the rewrite module and use the *sample* config below in httpd.conf
 
 ###############INFORMS#################
 

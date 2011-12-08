@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -T
+#!/usr/bin/perl -wT
 
 ##########
 # render the index page for the portfolio

@@ -1,5 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -wT
-
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -22,7 +21,7 @@ print <<HEAD;
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>Intute Informs :: $unit->{folioUnitTitle}</title>
+<title>Informs :: $unit->{folioUnitTitle}</title>
 <link rel="stylesheet" href="$user->{pathHtmlVir}$stylesheet" type="text/css">
 </head>
 <body class="body_main"><div class="content">

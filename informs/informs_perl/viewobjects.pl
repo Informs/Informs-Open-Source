@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -w
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -40,7 +40,6 @@ th { background:#DEFAE3; color:#007F71 }
   }
 </script>
 </head><body>
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
 <p>The following is a list of objects uploaded to your account</p>
 <p />
 <table cellpadding="2" border="1" cellspacing="0" width="100%">

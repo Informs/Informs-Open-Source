@@ -1,4 +1,5 @@
-#!/home/zzintadm/perl/bin/perl
+#!/usr/bin/perl -wT
+
 print "Content-type: text/html\n\n";
 
 use DBI;
@@ -27,6 +28,6 @@ my $sth=$dbh->prepare($sql);
 
 print <<END2
 
-<meta http-equiv="refresh" content="0;url=http://www.informs.intute.ac.uk/informs_perl/portfolio.pl?folio=$folio">
+<meta http-equiv="refresh" content="0;url=/informs_perl/portfolio.pl?folio=$folio">
 
 END2

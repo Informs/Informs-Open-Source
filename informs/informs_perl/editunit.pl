@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -WT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -150,7 +150,7 @@ if($action eq 'edit') {
         print $cgi->{header};
         print qq(<html><body><h1>502 - Authentication Error</h1>);
         print qq(<p />Your request has generated an authentication error.<p />Please use your web browser's back button to return to the previous page and then manually refresh that page to ensure it is valid.);
-        print qq(<p />If the error continues, please contact <a href="mailto:andrew.priest\@manchester.ac.uk">andrew.priest\@manchester.ac.uk</a></body></html>);
+        print qq(<p />If the error continues, please contact XXXX </body></html>);
         exit;
     }
     
@@ -348,7 +348,7 @@ if($unitNo && !$pageNo) {
     my $checksum = md5_hex($cgi->{unit}, $cgi->{folio}, $user->{accountTitle}, $user->{userNumber}, length($user->{accountTitle}));
     
     print qq(<b>unit number $unitNo - "$title"</b><p />);
-    print qq(<a href="http://www.informs.intute.ac.uk/informs_perl/jump.pl?$folio-$unitNo">Preview this unit</a>\n);
+    print qq(<a href="/informs_perl/jump.pl?$folio-$unitNo">Preview this unit</a>\n);
     print qq(<form action="editunit.pl" method="post">\n);
     print qq(<input type="hidden" name="folio" value="$cgi->{folio}">\n);
     print qq(<input type="hidden" name="unit" value="$cgi->{unit}">\n);
@@ -545,8 +545,8 @@ sub pageHeader {
 
 <html lang="en">
 <head>
-<title>Intute Informs edit unit</title>
-<script type="text/javascript" src="http://www.informs.intute.ac.uk/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<title>Informs edit unit</title>
+<script type="text/javascript" src="/tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
@@ -582,7 +582,7 @@ sub pageHeader {
 	});
 </script>
 
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />
 <style type="text/css">
 input,select,textarea {font-family:Arial; font-size:90%; }
 body { }
@@ -704,8 +704,7 @@ function mtShortCuts () {
 </script>
 </head>
 <body $onLoad><div class="container">
-<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />
-<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a> > <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > <b>edit</b>
+<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a> > <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > <b>edit</b>
 
 HEADER
 

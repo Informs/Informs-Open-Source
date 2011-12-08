@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -WT
+#!/usr/bin/perl -wT
 
 use strict;
 use lib "./";
@@ -76,9 +76,7 @@ use InhaleWrite qw( updateUser updatePortfolio createPortfolio deletePortfolio )
 	}
     }
 
-
-print qq(<img src="/images/intute_informs.jpg" class="logo" alt="Informs logo" border="0" />);
-print qq(<div id="breadcrumb">Intute Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > editor</div>);
+print qq(<div id="breadcrumb">Informs > <a href="$user->{pathToCGI}login2.pl?action=checkcookie&folio=$folio">portfolios</a>  >  <a href="portfolio.pl?folio=$folio">$folioInfo{portfolioName}</a> > editor</div>);
 
     print qq(<p /><br /><div style="padding:10px; padding-left:20px; padding-top:5px; border:1px solid #cccccc;">);
 
@@ -171,8 +169,8 @@ sub pageHeader
 
 <html lang="en">
 <head>
-<title>Intute Informs - Editor Options</title>
-<link rel="stylesheet" href="http://www.informs.intute.ac.uk/inhale.css" type="text/css" />
+<title>Informs - Editor Options</title>
+<link rel="stylesheet" href="/SAMPLE.css" type="text/css" />
 <style type="text/css">
 input,select,textarea { font-family: Arial; font-size:90%; }
 body { font-size:90% }

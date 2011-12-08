@@ -1,4 +1,4 @@
-#!/home/zzintadm/perl/bin/perl -w
+#!/usr/bin/perl -wT
 
     use strict;
     use DBI;

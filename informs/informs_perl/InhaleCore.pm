@@ -606,11 +606,11 @@ PERL CALLER SAYS:
     }
     
     use Mail::Sender;
-    my $sender = new Mail::Sender { smtp => '161.112.232.63', from => 'informs@intute.ac.uk' };
+    my $sender = new Mail::Sender { smtp => '', from => '' };
 
-    if ($sender->MailMsg({ smtp => '161.112.232.63',
-		           from => 'informs@intute.ac.uk',
-		             to =>'m.heddi@manchester.ac.uk',
+    if ($sender->MailMsg({ smtp => '',
+		           from => '',
+		             to =>'',
 		        subject => 'error message '.$time.' ['.$error.']',
 		            msg => $email
     }) < 0) {  }
@@ -717,7 +717,7 @@ sub timeToRun {
 
 sub siteOffline {
     print "Content-type: text/html\n\n";
-    print qq(<html><head><title>Intute Informs Web Site</title></head>\n);
+    print qq(<html><head><title>Informs Web Site</title></head>\n);
     print qq(<body><h1>503 Service Unavailable</h1>\n);
     print @_;
     print qq(</body></html>\n);
