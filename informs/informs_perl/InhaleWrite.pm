@@ -671,12 +671,27 @@ sub insertObject {
     unless( $newID > 0 ) { InhaleCore::error('InhaleWrite::insertObject was unable to retrieve the new object ID from the database', 'database'); }
 
     my $md5 = md5_hex($timeStamp.$fileType.$newID);
-    $filename = substr($md5,0,1).'/'.substr($md5,0,2).'/'.$newID.'_'.$md5.'.'.$tmp[-1];
+  #  $filename = substr($md5,0,1).'/'.substr($md5,0,2).'/'.$newID.'_'.$md5.'.'.$tmp[-1];
    
-    my $outputname = untaintPath($objectDirPath.$filename);
-    my $error = '';
+### fix to allow object insertion where no existing hierarchy is in place courtesy Sebastian Palucha Durham
+     my $subDirName1 = substr($md5,0,1);
+     my $subDirName2 = substr($md5,0,2);
+     $filename = $subDirName1.'/'.$subDirName2.'/'.$newID.'_'.$md5.'.'.$tmp[-1];
 
-    open( FILEOUT, '>'.$outputname ) || InhaleCore::error('InhaleWrite::insertObject was unable to create the final object file  ['.$outputname.']', 'bad call');
+  #  my $outputname = untaintPath($objectDirPath.$filename);
+    my $error = '';
+    my $outputname = untaintPath($objectDirPath.$subDirName1);
+    if(!opendir(DIR, $outputname)) {
+       mkdir ($outputname, 0755) || InhaleCore::error('InhaleWrite::insertObject was unable to create the subdirecotory ['.$outputname.'], bad call');
+    }
+    $outputname = untaintPath($objectDirPath.$subDirName1.'/'.$subDirName2);
+    if(!opendir(DIR, $outputname)){
+       mkdir ($outputname, 0755) || InhaleCore::error('InhaleWrite::insertObject was unable to create the subdirecotory ['.$outputname.'], bad call');
+    }
+    closedir(DIR);
+    $outputname = untaintPath($objectDirPath.$filename);
+
+    open( FILEOUT, '>'.$outputname ) || InhaleCore::error('InhaleWrite::insertObject was unable to create the final object file ['.$outputname.'], bad call');
     binmode( FILEOUT );
     print FILEOUT @file;
     close( FILEOUT );
